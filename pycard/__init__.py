@@ -1,4 +1,4 @@
 from pycard.card import Card, ExpDate
 
 
-VERSION = (1, 0)
+VERSION = (0, 9, 0)
