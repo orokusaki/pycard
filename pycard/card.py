@@ -171,18 +171,18 @@ class ExpDate(object):
         """
         Returns the expiration date in MM/YYYY format.
         """
-        return self.exp_date.strftime('%m/%Y')
+        return self.expired_after.strftime('%m/%Y')
 
     @property
     def mm(self):
         """
         Returns the expiration date in MM format.
         """
-        return self.exp_date.strftime('%m')
+        return self.expired_after.strftime('%m')
 
     @property
     def yyyy(self):
         """
         Returns the expiration date in YYYY format.
         """
-        return self.exp_date.strftime('%Y')
+        return self.expired_after.strftime('%Y')
