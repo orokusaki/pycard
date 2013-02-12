@@ -1,7 +1,7 @@
 pycard (pronounced picard)
 ==========================
 
-pycard is a credit card validation library with a simple interface and no
+pycard is a payment card validation library with a simple interface and no
 external dependencies.
 
 Usage

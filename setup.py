@@ -6,7 +6,7 @@ version = '.'.join([str(v) for v in __import__('pycard').VERSION])
 
 setup(
     name='pycard',
-    description='A simple Python library for credit card validation',
+    description='A simple library for payment card validation',
     version=version,
     author='Michael Angeletti',
     author_email='michael [at] angelettigroup [dot] com',
@@ -14,9 +14,10 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
+        'Development Status :: 4 - Beta',
         'Topic :: Utilities'
     ],
     packages=find_packages(),
