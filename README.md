@@ -17,16 +17,16 @@ Usage
     ... )
     ...
     >>> card
-    <pycard.Card number=XXXX-XXXX-XXXX-1111, expires=01/2013>
+    <pycard.Card brand=visa, number=XXXX-XXXX-XXXX-1111, expires=01/2013>
     >>> # Check whether or not the card is valid
-    >>> card.is_valid()
+    >>> card.is_valid
     False
     >>> # Check whether or not the card's number is valid
-    >>> card.is_mod10_valid()
+    >>> card.is_mod10_valid
     True
     >>> # Check whether or not the card is expired
-    >>> card.is_expired()
+    >>> card.is_expired
     True
     >>> # Check whether or not the card is a test card
-    >>> card.is_test()
+    >>> card.is_test
     True

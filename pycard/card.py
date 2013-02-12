@@ -53,7 +53,8 @@ class Card(object):
         Returns a typical repr with a simple representation of the masked card
         number and the exp date.
         """
-        return '<Card number={n}, exp_date={e}>'.format(
+        return '<Card brand={b} number={n}, exp_date={e}>'.format(
+            b=self.brand,
             n=self.mask,
             e=self.exp_date.mmyyyy
         )
@@ -66,7 +67,7 @@ class Card(object):
         they appear on their respective brands' cards.
         """
         # If the card is an Amex, it will have special formatting
-        if self.card_type == self.BRAND_AMEX:
+        if self.brand == self.BRAND_AMEX:
             return 'XXXX-XXXXXX-X{e}'.format(e=self.number[11:15])
 
         # All other cards
@@ -102,11 +103,9 @@ class Card(object):
     @property
     def is_valid(self):
         """
-        Returns true, if card is valid according to mod10, exp date, and
-        regex pattern matching against the 4 major credit card patterns, as
-        well as checking that the number is not a known test number.
+        Returns whether or not the card is a valid card for making payments.
         """
-        return not self.is_expired and self.is_mod10
+        return not self.is_expired and self.is_mod10_valid
 
     @property
     def is_mod10_valid(self):
