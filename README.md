@@ -8,27 +8,22 @@ Usage
 -----
 
 ```python
->>> from pycard.card import Card
->>>
->>> card = Card(
-...     number='4444333322221111',
-...     month=1,
-...     year=2013,
-...     cvv2=123
-... )
-...
->>> card
-<pycard.Card brand=visa, number=XXXX-XXXX-XXXX-1111, exp_date=01/2013>
->>> # Check whether or not the card is valid
->>> card.is_valid
-False
->>> # Check whether or not the card's number is valid
->>> card.is_mod10_valid
-True
->>> # Check whether or not the card is expired
->>> card.is_expired
-True
->>> # Check whether or not the card is a test card
->>> card.is_test
-True
+from pycard.card import Card
+
+
+card = Card(
+    number='4444333322221111',
+    month=1,
+    year=2020,
+    cvv2=123
+)
+
+# The card is not expired
+assert not card.is_expired
+# The card is mod10 valid
+assert card.is_mod10_valid
+# The card is valid
+assert card.is_valid
+# The card is a known test card
+assert card.is_test
 ```
