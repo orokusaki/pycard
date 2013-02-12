@@ -21,13 +21,6 @@ card = Card(
 
 # Validate the card (checks that the card isn't expired and is mod10 valid)
 assert card.is_valid
-```
-
-Extras
-------
-
-```python
-# ...continued from above example
 
 # Perform validation checks individually
 assert not card.is_expired

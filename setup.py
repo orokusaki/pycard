@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 
-# Dynamically calculate the version based on jsonrpc.VERSION
+# Calculate the version based on jsonrpc.VERSION
 version = '.'.join([str(v) for v in __import__('pycard').VERSION])
 
 setup(
