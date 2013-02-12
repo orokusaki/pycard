@@ -17,7 +17,7 @@ Usage
     ... )
     ...
     >>> card
-    <pycard.Card brand=visa, number=XXXX-XXXX-XXXX-1111, expires=01/2013>
+    <pycard.Card brand=visa, number=XXXX-XXXX-XXXX-1111, exp_date=01/2013>
     >>> # Check whether or not the card is valid
     >>> card.is_valid
     False
