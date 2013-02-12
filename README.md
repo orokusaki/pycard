@@ -1,8 +1,8 @@
-Python Card
-===========
+pycard (incorrectly pronounced Picard)
+======================================
 
-Python Card is a simple credit card validation Python library with a simple
-interface and no dependencies.
+pycard Card is a credit card validation library with a simple interface and no
+external dependencies.
 
 Usage
 -----
