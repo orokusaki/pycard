@@ -40,20 +40,22 @@ class Card(object):
         '4222222222222',
     )
 
-    def __init__(self, number, month, year, cvv2):
+    def __init__(self, number, month, year, cvc, holder=None):
         """
-        Attaches the provided data to the card, retrieving only the digits.
+        Attaches the provided card data and holder to the card after removing
+        non-digits from the provided number.
         """
         self.number = self.non_digit_regexp.sub('', number)
         self.exp_date = ExpDate(month, year)
-        self.cvv2 = cvv2
+        self.cvc = cvc
+        self.holder = holder
 
     def __repr__(self):
         """
         Returns a typical repr with a simple representation of the masked card
         number and the exp date.
         """
-        return '<Card brand={b} number={n}, exp_date={e}>'.format(
+        return u'<Card brand={b} number={n}, exp_date={e}>'.format(
             b=self.brand,
             n=self.mask,
             e=self.exp_date.mmyyyy
@@ -66,12 +68,16 @@ class Card(object):
         first six and the last four digits replaced by an X, formatted the way
         they appear on their respective brands' cards.
         """
+        # If the card is invalid, return an "invalid" message
+        if not self.is_mod10_valid:
+            return u'invalid'
+
         # If the card is an Amex, it will have special formatting
         if self.brand == self.BRAND_AMEX:
-            return 'XXXX-XXXXXX-X{e}'.format(e=self.number[11:15])
+            return u'XXXX-XXXXXX-X{e}'.format(e=self.number[11:15])
 
         # All other cards
-        return 'XXXX-XXXX-XXXX-{e}'.format(e=self.number[12:16])
+        return u'XXXX-XXXX-XXXX-{e}'.format(e=self.number[12:16])
 
     @property
     def brand(self):

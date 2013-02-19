@@ -8,15 +8,14 @@ Usage
 -----
 
 ```python
-from pycard.card import Card
-
+import pycard
 
 # Create a card
-card = Card(
+card = pycard.Card(
     number='4444333322221111',
     month=1,
     year=2020,
-    cvv2=123
+    cvc=123
 )
 
 # Validate the card (checks that the card isn't expired and is mod10 valid)
