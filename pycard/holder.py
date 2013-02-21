@@ -2,14 +2,14 @@ class Holder(object):
     """
     A credit card holder.
     """
-    def __init__(self, first, last, street, postal_code):
+    def __init__(self, first, last, street, post_code):
         """
         Attaches holder data for later use.
         """
         self.first = first
         self.last = last
         self.street = street
-        self.postal_code = postal_code
+        self.post_code = post_code
 
     def __repr__(self):
         """
