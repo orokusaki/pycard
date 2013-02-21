@@ -133,8 +133,13 @@ class ExpDate(object):
     """
     def __init__(self, month, year):
         """
-        Attaches the last possible datetime for the given month and year.
+        Attaches the last possible datetime for the given month and year, as
+        well as the raw month and year values.
         """
+        # Attach month and year
+        self.month = month
+        self.year = year
+
         # Get the month's day count
         weekday, day_count = monthrange(year, month)
 
