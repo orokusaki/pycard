@@ -10,7 +10,7 @@ setup(
     version=version,
     author='Michael Angeletti',
     author_email='michael [at] angelettigroup [dot] com',
-    url='http://github.com/orokusaki/pycard/',
+    url='https://github.com/orokusaki/pycard/',
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
