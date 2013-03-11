@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 
-# Calculate the version based on jsonrpc.VERSION
+# Calculate the version based on pycard.VERSION
 version = '.'.join([str(v) for v in __import__('pycard').VERSION])
 
 setup(
@@ -10,7 +10,7 @@ setup(
     version=version,
     author='Michael Angeletti',
     author_email='michael [at] angelettigroup [dot] com',
-    url='http://github.com/orokusaki/py-card/',
+    url='http://github.com/orokusaki/pycard/',
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
