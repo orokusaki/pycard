@@ -117,13 +117,19 @@ class Card(object):
     def is_mod10_valid(self):
         """
         Returns whether or not the card's number validates against the mod10
-        algorithm.
+        algorithm, automatically returning False on an empty value.
         """
+        # Check for empty string
+        if not self.number:
+            return False
+
+        # Run mod10 on the number
         dub, tot = 0, 0
         for i in range(len(self.number) - 1, -1, -1):
             for c in str((dub + 1) * int(self.number[i])):
                 tot += int(c)
             dub = (dub + 1) % 2
+
         return (tot % 10) == 0
 
 
