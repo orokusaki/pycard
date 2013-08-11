@@ -40,6 +40,11 @@ class Card(object):
         '4222222222222',
     )
 
+    # Stripe test credit cards
+    TESTS += (
+        '4242424242424242',
+    )
+
     def __init__(self, number, month, year, cvc, holder=None):
         """
         Attaches the provided card data and holder to the card after removing
