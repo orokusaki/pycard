@@ -90,7 +90,7 @@ class Card(object):
         Returns the brand of the card, if applicable, else an "unknown" brand.
         """
         # Check if the card is of known type
-        for brand, regexp in self.BRANDS.iteritems():
+        for brand, regexp in self.BRANDS.items():
             if regexp.match(self.number):
                 return brand
 
