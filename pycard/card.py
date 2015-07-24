@@ -22,6 +22,12 @@ class Card(object):
         BRAND_AMEX: re.compile(r'^3[47]\d{13}$'),
         BRAND_DISCOVER: re.compile(r'^(6011|65\d{2})\d{12}$'),
     }
+    FRIENDLY_BRANDS = {
+        BRAND_VISA: 'Visa',
+        BRAND_MASTERCARD: 'MasterCard',
+        BRAND_AMEX: 'American Express',
+        BRAND_DISCOVER: 'Discover',
+    }
 
     # Common test credit cards
     TESTS = (
@@ -98,6 +104,13 @@ class Card(object):
         return self.BRAND_UNKNOWN
 
     @property
+    def friendly_brand(self):
+        """
+        Returns the human-friendly brand name of the card.
+        """
+        return self.FRIENDLY_BRANDS.get(self.brand, 'unknown')
+
+    @property
     def is_test(self):
         """
         Returns whether or not the card's number is a known test number.
@@ -122,7 +135,8 @@ class Card(object):
     def is_mod10_valid(self):
         """
         Returns whether or not the card's number validates against the mod10
-        algorithm, automatically returning False on an empty value.
+        algorithm (Luhn algorithm), automatically returning False on an empty
+        value.
         """
         # Check for empty string
         if not self.number:
@@ -194,6 +208,14 @@ class ExpDate(object):
         Returns the expiration date in MM/YYYY format.
         """
         return self.expired_after.strftime('%m/%Y')
+
+    @property
+    def mmyy(self):
+        """
+        Returns the expiration date in MM/YY format (the same as is printed on
+        cards.
+        """
+        return self.expired_after.strftime('%m/%y')
 
     @property
     def mm(self):
