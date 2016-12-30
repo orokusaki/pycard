@@ -9,7 +9,7 @@ setup(
     description='A simple library for payment card validation',
     version=version,
     author='Michael Angeletti',
-    author_email='michael [at] angelettigroup [dot] com',
+    author_email='michael@angelettigroup.com',
     url='https://github.com/orokusaki/pycard/',
     classifiers=[
         'Environment :: Web Environment',
