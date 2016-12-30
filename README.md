@@ -4,6 +4,15 @@ pycard (pronounced picard)
 pycard is a payment card validation library with a simple interface and no
 external dependencies.
 
+Installation
+------------
+
+```bash
+pip install captain-pycard  # pycard was taken in PyPi
+```
+
+That's it, and there are no dependencies!
+
 Usage
 -----
 
