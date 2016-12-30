@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 version = '.'.join([str(v) for v in __import__('pycard').VERSION])
 
 setup(
-    name='pycard',
+    name='captain-pycard',
     description='A simple library for payment card validation',
     version=version,
     author='Michael Angeletti',
