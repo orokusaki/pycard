@@ -15,6 +15,7 @@ class Card(object):
     BRAND_MASTERCARD = 'mastercard'
     BRAND_AMEX = 'amex'
     BRAND_DISCOVER = 'discover'
+    BRAND_MAESTRO = 'maestro'
     BRAND_UNKNOWN = u'unknown'
     BRANDS = {
         BRAND_VISA: re.compile(r'^4\d{12}(\d{3})?$'),
@@ -24,12 +25,15 @@ class Card(object):
         ''', re.VERBOSE),
         BRAND_AMEX: re.compile(r'^3[47]\d{13}$'),
         BRAND_DISCOVER: re.compile(r'^(6011|65\d{2})\d{12}$'),
+        BRAND_MAESTRO:
+            re.compile(r'^(?:5[0678]\d\d|6304|6390|67\d\d)\d{8,15}$'),
     }
     FRIENDLY_BRANDS = {
         BRAND_VISA: 'Visa',
         BRAND_MASTERCARD: 'MasterCard',
         BRAND_AMEX: 'American Express',
         BRAND_DISCOVER: 'Discover',
+        BRAND_MAESTRO: 'Maestro',
     }
 
     # Common test credit cards
